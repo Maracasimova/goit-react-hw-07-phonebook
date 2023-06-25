@@ -3,6 +3,7 @@ import { fetchContacts, addContact, deleteContact } from './operations';
 
 const initialState = {
   items: [],
+  filter: '',
   isLoading: false,
   error: null,
 };
@@ -18,9 +19,9 @@ const contactSlice = createSlice({
       store.isLoading = false;
       store.items = payload;
     },
-    [fetchContacts.rejected]: (store, { payload }) => {
-      store.isLoading = false;
-      store.error = payload.message;
+    [fetchContacts.rejected]: (state, { payload }) => {
+      state.isLoading = false;
+      state.error = payload;
     },
     [addContact.pending]: store => {
       store.isLoading = true;

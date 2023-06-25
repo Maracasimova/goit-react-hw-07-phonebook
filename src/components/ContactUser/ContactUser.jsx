@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contactSlice';
+import { deleteContact } from '../../redux/operations';
 import style from './ContactUser.module.css';
 
 export const ContactUser = ({ id, name, number }) => {

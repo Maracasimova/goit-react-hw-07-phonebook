@@ -27,7 +27,7 @@ const contactSlice = createSlice({
     },
     [addContact.fulfilled]: (store, { payload }) => {
       store.loading = false;
-      store.items.push(payload);
+      store.contacts.push(payload);
       console.log(payload);
     },
     [addContact.rejected]: (store, { payload }) => {
@@ -39,7 +39,7 @@ const contactSlice = createSlice({
     },
     [deleteContact.fulfilled]: (store, { payload }) => {
       store.loading = false;
-      store.items = store.items.filter(item => item.id !== payload);
+      store.contacts = store.contacts.filter(item => item.id !== payload);
     },
     [deleteContact.rejected]: (store, { payload }) => {
       store.loading = false;

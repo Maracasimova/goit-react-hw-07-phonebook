@@ -12,9 +12,9 @@ export const ContactList = () => {
     dispatch(deleteContact(id));
   };
 
-  const contactSearch = contacts.filter(({ name }) => {
-    return name.toLowerCase().includes(filter.toLowerCase());
-  });
+  const contactSearch = contacts.filter(({ name }) =>
+    name.toLowerCase().includes(filter.toLowerCase())
+  );
 
   return (
     <ul>
